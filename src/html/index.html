@@ -45,12 +45,13 @@
                     </ul>
                 </nav>
         
-                <!-- Social Icons -->
+                <!-- Social Icons 
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-whatsapp" style="font-size: 24px;"></i></a>
                     <a href="#"><i class="fab fa-instagram" style="font-size: 24px;"></i></a>
                     <a href="#"><i class="fas fa-phone" style="font-size: 24px;"></i></a>
                 </div>
+                -->
         
                <!-- Mobile Menu Button -->
                 <div class="mobile-menu">
@@ -78,34 +79,26 @@
         <!--============================= Home =============================-->
       <section class="container-fluid" id="s__home">
 
+       
             <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="10"
                 centered-slides="true" autoplay-delay="5000" autoplay-disable-on-interaction="false">
-               
+        <!--        
                 <swiper-slide>
                     <div class="overlay"></div>
                     <img src="img/background_1.jpg" >
                 </swiper-slide>
+                -->
 
                 <swiper-slide>
                     <div class="overlay"></div>
                     <img src="img/background_2.jpg" >
                 </swiper-slide>
-
+<!--
                 <swiper-slide>
                     <div class="overlay"></div>
                     <img src="img/background_3.jpg" >
                 </swiper-slide>
-
-                <swiper-slide>
-                    <div class="overlay"></div>
-                    <img src="img/background_4.jpg" >
-                </swiper-slide>
-
-                <swiper-slide>
-                    <div class="overlay"></div>
-                    <img src="img/background_5.jpg" >
-                </swiper-slide>
-
+-->
             </swiper-container>
 
 
@@ -119,7 +112,13 @@
 
 
             <div class="info">
-                <h1>Seja bem Vindo</h1>
+               <!-- <h1>Estilo, conforto e tecnologia: </br> tudo o que você merece em um só lugar.</h1>
+           -->
+
+           <div class="typewriter">
+            <h1 id="text">Estilo, conforto e tecnologia: </br> tudo o que você merece em um só lugar.</h1>
+          </div>
+           
             </div>
 
 
@@ -243,6 +242,37 @@
 });
 
     </script>
+
+
+
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var i = 0;
+      var tag = document.getElementById("text");
+      var html = tag.innerHTML;  
+      var speed = 90;           
+    
+      function typeWriter() {
+        if (i < html.length) {
+          tag.innerHTML = html.slice(0, i + 1); // Exibe o texto de 0 a i + 1
+          i++;
+          setTimeout(typeWriter, speed);        // Continua o loop
+        } else {
+          //i = 0; // Reseta o índice para recomeçar a digitação
+          setTimeout(typeWriter, speed * 10);   // Pausa antes de recomeçar
+        }
+      }
+    
+      typeWriter();  // Inicia a função
+    });
+    </script>
+    
 
 </body>
 </html>
