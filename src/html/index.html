@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Site Modelo</title>
+        <link rel="stylesheet" href="css/style.min.css">
+        <link rel="stylesheet" href="dist/css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <style>
+        </style>
+    </head>
+<body>
+  
+    <main>
+
+        <!--============================= Header =============================-->
+        <header class="container-fluid" id="s__header">
+           
+            <div class="container header-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#">
+                        <img src="img/logo.png" alt="Logo" />
+
+                    </a>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#s__home">Home</a></li>
+                        <li>
+                            <a href="#" class="imoveis-link" onclick="toggleDropdown()">Imóveis</a>
+                            <ul id="imoveisDropdown" class="dropdown">
+                                <li><a href="#s__sobre">Locação</a></li>
+                                <li><a href="#">Venda</a></li>
+                                <li><a href="#">Terreno</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#s__servicos">Serviços</a></li>
+                        <li><a href="#s__sobre">Sobre</a></li>
+                        <li><a href="#s__contato">Contato</a></li>
+                    </ul>
+                </nav>
+        
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-whatsapp" style="font-size: 24px;"></i></a>
+                    <a href="#"><i class="fab fa-instagram" style="font-size: 24px;"></i></a>
+                    <a href="#"><i class="fas fa-phone" style="font-size: 24px;"></i></a>
+                </div>
+        
+               <!-- Mobile Menu Button -->
+                <div class="mobile-menu">
+                    <button class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </div>
+        
+            <!-- Mobile Navigation -->
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#s__home">Home</a></li>
+                    <li><a href="#s__imoveis">Imóveis</a></li>
+                    <li><a href="#s__servicos">Serviços</a></li>
+                    <li><a href="#s__sobre">Sobre</a></li>
+                    <li><a href="#s__contato">Contato</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <!--============================= Home =============================-->
+      <section class="container-fluid" id="s__home">
+
+            <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="10"
+                centered-slides="true" autoplay-delay="5000" autoplay-disable-on-interaction="false">
+               
+                <swiper-slide>
+                    <img src="img/background_1.jpg" >
+                </swiper-slide>
+
+                <swiper-slide>
+                    <img src="img/background_2.jpg" >
+                </swiper-slide>
+
+                <swiper-slide>
+                    <img src="img/background_3.jpg" >
+                </swiper-slide>
+
+               
+            </swiper-container>
+
+
+            <!-- Autoplay progress indicator -->
+            <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
+            </div>
+
+
+            <div class="info">
+                <h1>Seja bem Vindo</h1>
+            </div>
+
+
+
+        </section>  
+
+        <!--============================= Imóveis =============================-->
+        <section class="container-fluid" id="s__imoveis">
+            <div class="container">
+                <h1>Imóveis</h1>
+            </div>
+        </section>
+
+        <!--============================= Serviços =============================-->
+        <section class="container-fluid" id="s__servicos">
+            <div class="container">
+                <h1>Serviços</h1>
+            </div>
+        </section>
+
+        <!--============================= Sobre =============================-->
+        <section class="container-fluid" id="s__sobre">
+            <div class="container">
+                <h1>Sobre</h1>
+            </div>
+        </section>
+        
+        <!--============================= Mensagem =============================-->
+        <section class="container-fluid" id="s__mensagem">
+            <div class="container">
+                <h1>Mensagem</h1>
+            </div>
+        </section>   
+        
+        <!--============================= Contato =============================-->
+        <section class="container-fluid" id="s__contato">
+            <div class="container">
+                <h1>Contato</h1>
+            </div>
+        </section>              
+
+        <!--============================= Links Úteis =============================-->
+        <section class="container-fluid" id="s__links">
+            <div class="container">
+                <h1>Links Úteis</h1>
+            </div>
+        </section> 
+
+        <!--============================= Footer =============================-->
+        <footer class="container-fluid" id="s__footer">
+            <div class="container">
+                <p>Todos os direitos reservados a Exemplo © 2024</p>
+            <!--    <p>Desenvolvido por <strong><img src="/img/logo_pedro.png"></strong></p>  -->
+            <p><strong><img src="/img/logo_pedro.png"></strong></p>
+        </div>
+        </footer>
+
+    </main>
+
+    <script src="js/app.min.js"></script>
+
+
+
+   <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+  const swiper = new Swiper('.swiper-container', {
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  spaceBetween: 10,
+  centeredSlides: true,
+  autoplay: {
+    delay: 20000, // 20 segundos entre cada slide
+    disableOnInteraction: false,
+  },
+  speed: 9000, // Velocidade da transição ajustada para 3 segundos
+  effect: 'fade-in', // Adiciona efeito de fade para uma transição mais suave
+});
+
+
+
+
+
+
+    function toggleDropdown() {
+    var dropdown = document.getElementById("imoveisDropdown");
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+    } else {
+        dropdown.style.display = "block";
+    }
+}
+
+
+
+  </script>
+
+
+    <script>
+       document.querySelector('.hamburger').addEventListener('click', function() {
+       document.querySelector('.mobile-nav').classList.toggle('active');
+       document.querySelector('.hamburger').classList.toggle('active');
+       });
+
+
+       document.querySelectorAll('.mobile-nav a').forEach(link => {
+  link.addEventListener('click', function() {
+    const mobileNav = document.querySelector('.mobile-nav');
+    const hamburger = document.querySelector('.hamburger');
+    mobileNav.classList.remove('active');
+    hamburger.classList.remove('active');
+  });
+});
+
+    </script>
+
+</body>
+</html>

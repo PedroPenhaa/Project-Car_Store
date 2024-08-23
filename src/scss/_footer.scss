@@ -1,0 +1,47 @@
+#s__footer{
+    padding: 10px;
+    background-color: black;
+    .container{
+        @include flex(row, center, space-between);
+        p {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem; 
+            margin: 0;
+            strong{
+                img{
+                    margin-top: -3px;
+                    height: 40px; 
+                    width: auto;
+                }
+            }
+          }
+    }
+
+
+ /*---------------------------- Responsividade ----------------------------*/
+    @media (max-width: 768px) {
+        padding: 8px 0 2px 0;
+        .container{
+            @include flex(column, center, center);
+            gap: 5px;
+            padding: 0 0 10px 0;
+            p {
+                color: white;
+                font-weight: bold;
+                font-size: 1.1rem; 
+                strong{
+                    img{
+                        margin: 0;
+                        height: 37px;
+                    }
+                    
+                }
+            }
+        }
+
+    }
+}
+
+
+

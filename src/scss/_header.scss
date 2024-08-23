@@ -1,0 +1,231 @@
+#s__header {
+  background-color: black;
+  border-bottom: 1px solid #eaeaea;
+
+  .header-container {
+    @include flex(row, center, space-between);
+    padding: 14px 30px 7px 30px;
+    min-width: 95%;
+    border: none;
+
+    .logo {
+      img {
+        max-width: 120px;
+        height: auto;
+        display: block;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+      }
+    }
+
+    .nav-menu {
+      ul {
+        list-style: none;
+        @include flex(row, center, center);
+        gap: 30px;
+        margin: 0;
+
+        li {
+          position: relative;
+
+          a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+            transition: color 0.9s, text-shadow 0.1s;
+
+            &:hover {
+              color: #007bff;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.0); 
+            }
+          }
+
+          &:nth-child(2) {
+            // Dropdown menu para o item Imóveis
+            ul {
+              display: block; /* Muda para block para permitir transição */
+              height: 0; 
+              overflow: hidden; /* Impede que o conteúdo extravase durante a animação */
+              opacity: 0; 
+              transition: height 0.5s ease, opacity 0.5s ease;
+              position: absolute;
+              top: 100%;
+              left: 0;
+              background-color: white;
+              box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+              z-index: 1;
+
+              li {
+                padding: 10px 20px;
+                white-space: nowrap;
+
+                a {
+                  color: black;
+                  font-size: 1.6rem;
+                  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+
+                  &:hover {
+                    color: #007bff;
+                  }
+                }
+
+                // Aplica a borda em todos menos o último item
+                &:not(:last-child) {
+                  border-bottom: 1px solid grey;
+                }
+              }
+            }
+
+            &:hover ul {
+              height: auto;
+              padding: 10px 15px;
+              border-radius: 5px;
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .imoveis-link {
+        &::after {
+          content: "\f078"; 
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          margin-left: 8px;
+          transition: transform 0.3s;
+        }
+
+        &:hover::after {
+          transform: rotate(180deg); 
+        }
+      }
+    }
+
+    .social-icons {
+      @include flex(row, center, center);
+      gap: 20px;
+      font-size: 34px;
+      color: white;
+
+      a {
+        margin-left: 15px;
+        color: var(--secondary-color);
+        font-size: 34px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #007bff;
+        }
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+  }
+
+  .mobile-nav {
+    margin-top: 74px;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    clip-path: circle(100px at 90% -15%);
+    transition: clip-path 1s ease-out;
+    pointer-events: none;
+
+    ul {
+      list-style: none;
+      padding: 20px;
+
+      li a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+      }
+
+      li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+      }
+
+      li:nth-child(3) a {
+        transition: 0.5s 0.6s;
+      }
+    }
+  }
+
+  /*---------------------------- Responsividade ----------------------------*/
+  @media (max-width: 768px) {
+    .header-container {
+      .nav-menu,
+      .social-icons {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: flex !important;
+        @include flex(column, center, center);
+        width: 50px;
+        height: 50px;
+
+        .hamburger {
+          cursor: pointer;
+          @include flex(column, center, center);
+          width: 30px;
+          height: 40px;
+          gap: 8px;
+
+          .bar {
+            width: 100%;
+            height: 4px !important;
+            border-radius: 50px !important;
+            background-color: var(--secondary-color);
+            transition: transform 0.3s;
+          }
+        }
+      }
+    }
+
+    .mobile-nav.active {
+      height: auto;
+      margin-top: 99px;
+      display: flex !important;
+      clip-path: circle(1500px at 90% -15%);
+      pointer-events: all;
+
+      ul li a {
+        opacity: 1;
+      }
+    }
+
+    .hamburger.active {
+      .bar:nth-child(1) {
+        transform: translateY(10px) rotate(45deg); 
+      }
+
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .bar:nth-child(3) {
+        transform: translateY(-14px) rotate(-45deg);
+      }
+    }
+  }
+}

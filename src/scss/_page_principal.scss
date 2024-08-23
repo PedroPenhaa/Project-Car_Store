@@ -1,0 +1,100 @@
+section{
+  height: 100vh;
+  padding: 7rem 0;
+  border-bottom: 1px solid grey;
+}
+
+// ------------------ Home ------------------ //
+#s__home {
+  padding: 0;
+  height: 80vh;
+  @include flex(row, center, center);  
+  position: relative; 
+  overflow: hidden; 
+  swiper-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; // Fica no fundo
+  }
+
+  swiper-slide {
+    @include flex(row, center, center);  
+    background-color: #fff;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block; 
+      max-width: 100%; 
+      height: auto;
+      image-rendering: optimizeQuality;
+      border: 0; 
+    }
+  }
+
+  .info {
+    @include flex(column, center, center);  
+    height: 100%;
+    position: relative;
+    z-index: 1; // Fica acima do swiper
+    color: black;
+    font-size: 2.5rem;
+    text-align: center;
+    h1 {
+      margin-top: -50px;
+    }
+  }
+
+  .autoplay-progress {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    @include flex(row, center, center);  
+    font-weight: bold;
+    color: black;
+
+    svg {
+      --progress: 0;
+      width: 100%;
+      height: 100%;
+      stroke-width: 4px;
+      stroke: black;
+      fill: none;
+      stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+      stroke-dasharray: 125.6;
+      transform: rotate(-90deg);
+    }
+  }
+
+ 
+
+  @media (max-width: 768px) { // Smartphones
+    position: relative;
+    top: 0;
+    height: 100vh;
+
+    swiper-slide {
+     
+     img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      
+    }
+    }
+    .info {
+      font-size: 1.5rem;
+      h1 {
+        margin-top: 0;
+      }
+    }
+  }
+
+ 
+}
