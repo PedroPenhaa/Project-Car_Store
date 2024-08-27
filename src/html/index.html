@@ -77,53 +77,34 @@
         </header>
 
         <!--============================= Home =============================-->
-      <section class="container-fluid" id="s__home">
+        <section class="container-fluid" id="s__home">
+        
+                <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="10"
+                    centered-slides="true" autoplay-delay="5000" autoplay-disable-on-interaction="false">
+    
+                    <swiper-slide>
+                        <div class="overlay"></div>
+                        <img src="img/background_12.webp" >
+                    </swiper-slide>
 
-       
-            <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="10"
-                centered-slides="true" autoplay-delay="5000" autoplay-disable-on-interaction="false">
-        <!--        
-                <swiper-slide>
-                    <div class="overlay"></div>
-                    <img src="img/background_1.jpg" >
-                </swiper-slide>
-                -->
+                </swiper-container>
 
-                <swiper-slide>
-                    <div class="overlay"></div>
-                    <img src="img/background_2.jpg" >
-                </swiper-slide>
-<!--
-                <swiper-slide>
-                    <div class="overlay"></div>
-                    <img src="img/background_3.jpg" >
-                </swiper-slide>
--->
-            </swiper-container>
+                <!-- Autoplay progress indicator -->
+                <div class="autoplay-progress">
+                    <svg viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="20"></circle>
+                    </svg>
+                    <span></span>
+                </div>
 
-
-            <!-- Autoplay progress indicator -->
-            <div class="autoplay-progress">
-                <svg viewBox="0 0 48 48">
-                    <circle cx="24" cy="24" r="20"></circle>
-                </svg>
-                <span></span>
-            </div>
-
-
-            <div class="info">
-               <!-- <h1>Estilo, conforto e tecnologia: </br> tudo o que você merece em um só lugar.</h1>
-           -->
-
-           <div class="typewriter">
-            <h1 id="text">Estilo, conforto e tecnologia: </br> tudo o que você merece em um só lugar.</h1>
-          </div>
-           
-            </div>
-
-
-
-        </section>  
+                <div class="info">
+            
+                    <div class="typewriter">
+                        <h1 id="text">Estilo, conforto e tecnologia </br> Tudo o que você merece em um só lugar.</h1>
+                    </div>
+            
+                </div>
+            </section>  
 
         <!--============================= Imóveis =============================-->
         <section class="container-fluid" id="s__imoveis">
@@ -135,16 +116,58 @@
         <!--============================= Serviços =============================-->
         <section class="container-fluid" id="s__servicos">
             <div class="container">
-                <h1>Serviços</h1>
+                <h1 class="services-title">Serviços</h1>
+                <div class="service-cards">
+                    <!-- Card de Garantia -->
+                    <div class="card service-card">
+                        <img src="img/garantia.png" alt="Garantia">
+                        <h3>Garantia</h3>
+                        <p>Todos os nossos carros possuem garantia de 12 meses para motor e caixa, com cobertura em todo o território nacional.</p>
+                    </div>
+                    <!-- Card de Negociações -->
+                    <div class="card service-card">
+                        <img src="img/negociacoes.png" alt="Negociações">
+                        <h3>Negociações Flexíveis</h3>
+                        <p>Nós oferecemos condições de pagamento personalizadas e financiamento facilitado para você sair de carro novo.</p>
+                    </div>
+                    <!-- Card de Preço Negociável -->
+                    <div class="card service-card">
+                        <img src="img/preco.png" alt="Preço Negociável">
+                        <h3>Preço Negociável</h3>
+                        <p>Estamos abertos a negociações para garantir que você faça o melhor negócio com o máximo de vantagens.</p>
+                    </div>
+                    <!-- Card de Troca -->
+                    <div class="card service-card">
+                        <img src="img/troca.png" alt="Pega na Troca">
+                        <h3>Pega na Troca</h3>
+                        <p>Quer trocar seu usado por um mais novo? Avaliamos seu veículo e facilitamos a troca.</p>
+                    </div>
+                </div>
             </div>
         </section>
+
 
         <!--============================= Sobre =============================-->
         <section class="container-fluid" id="s__sobre">
             <div class="container">
-                <h1>Sobre</h1>
+                <h1 class="about-title">Onde nos Encontrar</h1>
+                <div class="about-content">
+
+                    <div class="about-image">
+                        <img src="img/loja1.jpeg" alt="Nossa Loja">
+                    </div>
+
+                    <div class="about-text">
+                        <p>Somos especialistas em proporcionar as melhores opções em estacionamento e revenda de veículos. Com mais de 10 anos de experiência, garantimos qualidade e confiança em todos os nossos serviços.</p>
+                        <p>Nossa missão é oferecer soluções práticas e seguras para que você possa comprar, vender ou estacionar seu veículo com total tranquilidade.</p>
+                        <h2>Venha nos conhecer!</h2>
+                        <p>Visite nosso espaço e confira de perto a qualidade e a variedade dos nossos veículos e serviços. Nossa equipe está pronta para recebê-lo e oferecer a melhor experiência possível.</p>
+                    </div>
+                    
+                </div>
             </div>
         </section>
+
         
         <!--============================= Mensagem =============================-->
         <section class="container-fluid" id="s__mensagem">
@@ -220,10 +243,7 @@
     }
 }
 
-
-
   </script>
-
 
     <script>
        document.querySelector('.hamburger').addEventListener('click', function() {
@@ -245,18 +265,13 @@
 
 
 
-
-
-
-
-
-
-<script>
+    <!-- Digitação texto -->
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
       var i = 0;
       var tag = document.getElementById("text");
       var html = tag.innerHTML;  
-      var speed = 90;           
+      var speed = 80;           
     
       function typeWriter() {
         if (i < html.length) {
