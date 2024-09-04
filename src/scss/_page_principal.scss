@@ -39,7 +39,7 @@ section{
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.1); // Ajuste a opacidade conforme necessário
+      background-color: rgba(0, 0, 0, 0.5); // Ajuste a opacidade conforme necessário
       z-index: 1;
     }
   }
@@ -51,7 +51,6 @@ section{
     position: relative;
     z-index: 1; // Fica acima do swiper
     color: black;
-    font-size: 2.5rem;
     text-align: center;
        
     .typewriter {
@@ -64,11 +63,7 @@ section{
       display: inline-block;
       font-weight: bold;
       color: white;
-      font-size: 4.8rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); 
-
-
-  
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);   
     }
     h1:after{
      content: '';
@@ -141,7 +136,148 @@ section{
  
 }
 
+// ------------------ Veículos ------------------ //
+#s__veiculos{
+  
+ .container{
 
+    .row{
+      .col-md-4{
+        .card {
+          @include flex(column, center, center);  
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          border-radius: 10px;
+          overflow: hidden;
+          margin-bottom: 20px; /* Espaçamento entre os cards quando em colunas */
+        
+          .carousel{
+
+            .carousel-indicators{
+
+            }
+
+            .carousel-inner{
+              .carousel-item{
+                width: 100%;
+                img {
+                  display: block; 
+                  height: auto;
+                  border: 0; 
+                  width: 20%;
+                  height: auto;
+                  object-fit: cover; 
+                }
+              }
+            }
+
+          }
+
+          .title-card {
+            @include flex(column, left, center);  
+            padding: 0 1rem;
+            width: 100%;
+            h3{
+              font-weight: 700;
+            }
+
+            .title-infos {
+                width: 100%;
+                font-weight: 0.1rem !important;
+                text-align: justify;
+                color: #bfbfbf; /* Esta é outra opção de cinza claro */
+                font-weight: 700;
+            }
+          }
+
+          .infos-card{
+            @include flex(column, left, center);
+            width: 100%;  
+            padding: 0 2rem;
+
+            .valor{
+              p{
+                @include flex(column, center, center);
+                width: 100%;
+                font-size: 1.5rem;
+                font-weight: 800;
+                color: var(--red-color);
+              }
+            }
+
+            .ano-quilometragem{
+              @include flex(row, center, space-around);
+              width: 100%;
+
+              p{
+                font-weight: 700;
+                color: #bfbfbf; /* Esta é outra opção de cinza claro */
+              }
+            }
+
+            .localizacao{
+              @include flex(row, center, center);
+              gap: 20px;
+              p, i{
+                color: #bfbfbf;
+              }
+
+              p{
+                width: 100%;
+                font-weight: 700;
+
+                @include flex(row, center, center);
+
+              }
+            }
+
+
+          }
+
+       
+          
+         
+            .btn {
+              width: 30%; // Aumenta a largura para preencher o espaço disponível
+              padding: 12px 0; // Adiciona padding para tornar o botão mais alto
+              font-size: 1.2rem; // Ajusta o tamanho da fonte para melhor legibilidade
+              font-weight: bold; // Deixa o texto em negrito
+              border: none; // Remove qualquer borda que possa estar definida
+              border-radius: 8px; // Arredonda os cantos do botão
+              background-color: #E23C39; // Cor de fundo azul padrão do Bootstrap
+              color: white; // Define a cor do texto para branco
+              transition: background-color 0.3s, color 0.3s; // Suaviza a transição de cores
+              margin: 20px;
+            }
+
+            .btn:hover{
+            
+              background-color: white;
+              color: #E23C39;
+              border: 1px solid #E23C39;
+            }
+          
+
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+  // ------------------ Responsividade
+
+
+ }
+}
 
 
 
@@ -154,7 +290,6 @@ section{
   .services-title {
       text-align: center;
       color: #333;
-      font-size: 2.5rem;
       margin-bottom: 3rem;
   }
   .service-cards {
@@ -176,7 +311,6 @@ section{
       }
       h3 {
           color: #333;
-          font-size: 1.4rem;
           margin-top: 1rem;
       }
       p {
@@ -215,7 +349,6 @@ section{
   .about-title {
       text-align: left;
       color: #333;
-      font-size: 2.5rem;
       margin-bottom: 2rem;
   }
   .about-content {
